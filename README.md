@@ -11,8 +11,11 @@ Run on a RPi with bluetooth.
 Depends on [bluepy](https://pypi.org/project/bluepy/).
 
 Usage:
+
+Replace lines 12 & 13 with the beacon MAC addresses you wish to track, then:
+
 ```bash
 sudo -E python3 scanner.py
 ```
 
-Head to http://\<RPi IP Address\>:8080/beacons/
+Head to `http://\<RPi IP Address\>:8080/beacons/`
