@@ -15,7 +15,21 @@ Usage:
 Replace lines 12 & 13 with the beacon MAC addresses you wish to track, then:
 
 ```bash
-sudo -E python3 scanner.py
+sudo python3 scanner.py
 ```
 
-Head to `http://\<RPi IP Address\>:8080/beacons/`
+Head to `http://\<RPi IP Address\>:8080/`
+
+## Tracker
+
+Run anywhere you can run Python, typically on one of the scanners.
+
+Usage:
+
+Replace lines 12 & 13 with the beacon MAC addresses you wish to track, replace lines 16 to 18 with your trackers, then:
+
+```bash
+python3 tracker.py
+```
+
+Head to `http://\<RPi IP Address\>:8081/`

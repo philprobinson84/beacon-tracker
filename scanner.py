@@ -69,7 +69,7 @@ t.start()
 routes = web.RouteTableDef()
 
 
-@routes.get('/beacons/')
+@routes.get('/')
 async def get_beacons(request):
     lock.acquire()
     response = {}
