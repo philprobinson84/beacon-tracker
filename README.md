@@ -2,7 +2,9 @@
 
 This Python project consists of multiple scanner elements (intended to run on RPi) and a single co-ordinator element.
 
-Beacon position is triangulated based on the position of the scanners.
+Beacon position is triangulated by the co-ordinator element based on the position of the scanners.
+
+THIS PROJECT IS STILL UNDER DEVELOPMENT.
 
 ## Scanner
 
@@ -10,9 +12,17 @@ Run on a RPi with bluetooth.
 
 Depends on [bluepy](https://pypi.org/project/bluepy/).
 
-Usage:
+### Installation
 
-Replace lines 12 & 13 with the beacon MAC addresses you wish to track, then:
+```bash
+./install_deps.sh
+```
+
+This installs the [bluepy](https://pypi.org/project/bluepy/) dependencies, then installs the Python packages from `requirements.txt`.
+
+### Usage
+
+Replace lines 12 & 13 of `scanner.py` with the beacon MAC addresses you wish to track, then:
 
 ```bash
 sudo python3 scanner.py

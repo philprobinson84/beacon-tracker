@@ -1,5 +1,5 @@
 """
-Scan for specific beacons and provide and HTTP API to query RSSI
+Scan for specific beacons and provide and HTTP API to query RSSI.
 """
 
 from bluepy.btle import Scanner
@@ -15,12 +15,35 @@ beacon_config = [
 
 
 class beacon:
+    """
+    A simple class to represent a Bluetooth Beacon.
+    """
     def __init__(self, addr):
+        """
+        Constructs all the necessary attributes for the Beacon object.
+
+        Parameters
+        ----------
+            addr : str
+                MAC address of the Bluetooth Beacon.
+        """
         self.addr = addr
         self.rssi = 0
         self.lastSeen = None
 
     def setRssi(self, rssi):
+        """
+        Sets the latest RSSI value.
+
+        Parameters
+        ----------
+            rssi : float
+                The RSSI of the beacon
+
+        Returns
+        -------
+        None
+        """
         self.rssi = rssi
         self.lastSeen = datetime.now()
         print('Beacon: {}, {}dBm, last seen: {}'.format(
@@ -29,20 +52,75 @@ class beacon:
             self.lastSeen))
 
     def getAddr(self):
+        """
+        Gets the MAC address of the Bluetooth Beacon.
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        MAC address of the Bluetooth Beacon : str
+        """
         return self.addr
 
     def getRssi(self):
+        """
+        Gets the RSSI of the Bluetooth Beacon.
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        RSSI of the Bluetooth Beacon : int
+        """
         return self.rssi
 
     def getLastSeen(self):
+        """
+        Gets the time and date the beacon was last seen.
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        Time and date the beacon was last seen : datetime
+        """
         return self.lastSeen
 
 
 class beaconScanner (threading.Thread):
+    """
+    A simple class to handle scanning for Bluetooth Beacons.
+    """
     def __init__(self):
+        """
+        Constructs all the necessary attributes for the Beacon Scanner object.
+
+        Parameters
+        ----------
+        None
+        """
         threading.Thread.__init__(self)
 
     def run(self):
+        """
+        Constructs a bluepy BTLE scanner and scans indefinately for Bluetooth
+        Beacons. If a known beacon is found, the RSSI value is updated.
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        None
+        """
         while 1:
             scanner = Scanner()
             devices = scanner.scan(5.0)
