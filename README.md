@@ -1,5 +1,8 @@
 # Beacon Tracker
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bc193fc046e44070a7d131839968ad5a)](https://app.codacy.com/manual/philprobinson84/beacon-tracker?utm_source=github.com&utm_medium=referral&utm_content=philprobinson84/beacon-tracker&utm_campaign=Badge_Grade_Dashboard)
+
+
 This Python project consists of multiple scanner elements (intended to run on RPi) and a single co-ordinator element.
 
 Beacon position is triangulated by the co-ordinator element based on the position of the scanners.
