@@ -1,6 +1,4 @@
-"""
-Scan for specific beacons and provide and HTTP API to query RSSI.
-"""
+"""Scan for specific beacons and provide and HTTP API to query RSSI."""
 
 from bluepy.btle import Scanner
 from datetime import datetime
