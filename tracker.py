@@ -78,7 +78,7 @@ class beaconTracker (threading.Thread):
     def run(self):
         while 1:
             self.lastResponse = requests.get(
-                "http://{}:8080/beacons/".format(self.addr))
+                "http://{}:8080/".format(self.addr))
             self.processResponse()
             sleep(5)
 
